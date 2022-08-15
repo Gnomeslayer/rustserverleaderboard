@@ -1,0 +1,12 @@
+{
+    "discord_token": "",
+    "battlemetrics_token": "",
+    "organization_id": 25433,
+    "prefix": "!",
+    "error_channel": 930455813007474688,
+    "weekly_channel": 1008549990366466158,
+    "daily_channel": 1008527989941743757,
+    "show_daily": true,
+    "show_weekly": true
+}
+
