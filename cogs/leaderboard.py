@@ -49,7 +49,7 @@ class Loops(commands.Cog):
 
     @commands.command()
     @commands.is_owner()
-    async def startleaderboard(self, ctx):
+    async def stopleaderboard(self, ctx):
         response = await ctx.reply("Leaderboard has been stopped.")
         await response.delete(delay=5)
         await ctx.message.delete(delay=5)
