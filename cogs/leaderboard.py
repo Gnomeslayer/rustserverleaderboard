@@ -81,7 +81,8 @@ class Leaderboard(commands.Cog):
             embed = discord.Embed(title=f"Leaderboard for Dubs servers! [past week]", color=0x00FF00)
             for p in weeklydata:
                 if leaderboardspot == 1:
-                    playerinfo = await self.playerinfo(weeklydata[p]['bmid'])
+                    if weeklydata[p]['bmid'] > 0:
+                        playerinfo = await self.playerinfo(weeklydata[p]['bmid'])
                     embed2 = discord.Embed(title="First place player on the server", color=0xf1c40f)
                     embed2.add_field(
                         name=f"Name",
@@ -99,11 +100,13 @@ class Leaderboard(commands.Cog):
                         inline=True
                     )
                     embed2.set_footer(text="Created by Gnomeslayer#5551")
-                    embed2.set_thumbnail(url=playerinfo["avatar"])
+                    if weeklydata[p]['bmid'] > 0:
+                        embed2.set_thumbnail(url=playerinfo["avatar"])
                     if config['show_weekly']:
                         await weeklychannel.send(embed=embed2)
                 if leaderboardspot == 2:
-                    playerinfo = await self.playerinfo(weeklydata[p]['bmid'])
+                    if weeklydata[p]['bmid'] > 0:
+                        playerinfo = await self.playerinfo(weeklydata[p]['bmid'])
                     embed2 = discord.Embed(title="Second place player on the server", color=0x95a5a6)
                     embed2.add_field(
                         name=f"Name",
@@ -121,11 +124,13 @@ class Leaderboard(commands.Cog):
                         inline=True
                     )
                     embed2.set_footer(text="Created by Gnomeslayer#5551")
-                    embed2.set_thumbnail(url=playerinfo["avatar"])
+                    if weeklydata[p]['bmid'] > 0:
+                        embed2.set_thumbnail(url=playerinfo["avatar"])
                     if config['show_weekly']:
                         await weeklychannel.send(embed=embed2)
                 if leaderboardspot == 3:
-                    playerinfo = await self.playerinfo(weeklydata[p]['bmid'])
+                    if weeklydata[p]['bmid'] > 0:
+                        playerinfo = await self.playerinfo(weeklydata[p]['bmid'])
                     embed2 = discord.Embed(title="Third place player on the server", color=0xa84300)
                     embed2.add_field(
                         name=f"Name",
@@ -143,7 +148,8 @@ class Leaderboard(commands.Cog):
                         inline=True
                     )
                     embed2.set_footer(text="Created by Gnomeslayer#5551")
-                    embed2.set_thumbnail(url=playerinfo["avatar"])
+                    if weeklydata[p]['bmid'] > 0:
+                        embed2.set_thumbnail(url=playerinfo["avatar"])
                     if config['show_weekly']:
                         await weeklychannel.send(embed=embed2)
                 if leaderboardspot > 3:
@@ -173,7 +179,8 @@ class Leaderboard(commands.Cog):
         embed = discord.Embed(title=f"Leaderboard for Dubs servers! [past day]", color=0x00FF00)
         for p in myplayers:
             if leaderboardspot == 1:
-                playerinfo = await self.playerinfo(myplayers[p]['bmid'])
+                if myplayers[p]['bmid'] > 0:
+                    playerinfo = await self.playerinfo(myplayers[p]['bmid'])
                 embed2 = discord.Embed(title="First place player on the server", color=0xf1c40f)
                 embed2.add_field(
                     name=f"Name",
@@ -191,11 +198,13 @@ class Leaderboard(commands.Cog):
                     inline=True
                 )
                 embed2.set_footer(text="Created by Gnomeslayer#5551")
-                embed2.set_thumbnail(url=playerinfo["avatar"])
+                if myplayers[p]['bmid'] > 0:
+                    embed2.set_thumbnail(url=playerinfo["avatar"])
                 if config['show_daily']:
                     await dailychannel.send(embed=embed2)
             if leaderboardspot == 2:
-                playerinfo = await self.playerinfo(myplayers[p]['bmid'])
+                if myplayers[p]['bmid'] > 0:
+                    playerinfo = await self.playerinfo(myplayers[p]['bmid'])
                 embed2 = discord.Embed(title="Second place player on the server", color=0x95a5a6)
                 embed2.add_field(
                     name=f"Name",
@@ -213,11 +222,13 @@ class Leaderboard(commands.Cog):
                     inline=True
                 )
                 embed2.set_footer(text="Created by Gnomeslayer#5551")
-                embed2.set_thumbnail(url=playerinfo["avatar"])
+                if myplayers[p]['bmid'] > 0:
+                    embed2.set_thumbnail(url=playerinfo["avatar"])
                 if config['show_daily']:
                     await dailychannel.send(embed=embed2)
             if leaderboardspot == 3:
-                playerinfo = await self.playerinfo(myplayers[p]['bmid'])
+                if myplayers[p]['bmid'] > 0:
+                    playerinfo = await self.playerinfo(myplayers[p]['bmid'])
                 embed2 = discord.Embed(title="Third place player on the server", color=0xa84300)
                 embed2.add_field(
                     name=f"Name",
@@ -235,7 +246,8 @@ class Leaderboard(commands.Cog):
                     inline=True
                 )
                 embed2.set_footer(text="Created by Gnomeslayer#5551")
-                embed2.set_thumbnail(url=playerinfo["avatar"])
+                if myplayers[p]['bmid'] > 0:
+                    embed2.set_thumbnail(url=playerinfo["avatar"])
                 if config['show_daily']:
                     await dailychannel.send(embed=embed2)
             if leaderboardspot > 3:
