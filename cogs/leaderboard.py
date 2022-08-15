@@ -12,9 +12,9 @@ with open("config.json", "r") as f:
     config = json.load(f)
 
 
-class Loops(commands.Cog):
+class Leaderboard(commands.Cog):
     def __init__(self, client):
-        print("[Cog] Loops has been initiated")
+        print("[Cog] Leaderboard has been initiated")
         self.client = client
         self.days = 1
         
@@ -270,15 +270,9 @@ class Loops(commands.Cog):
                 stats[i]['deaths'] += processed[i]['deaths']
             else:
                 stats[i] = processed[i]
-        previouspage = ''
         pagecount = 0
-        pagecap = 5
+        pagecap = 0 #Zero for no limit
         while mystats['links'].get('next'):
-            print(f'Getting next page - Page: {pagecount}/{pagecap}')
-            if previouspage == mystats['links']['next']:
-                print('ERROR IN CODE!!')
-                break
-            previouspage = mystats['links']['next']
             myextension = mystats["links"]["next"]
             mystats = await self.additional_data(myextension)
             await asyncio.sleep(0.2)
@@ -289,9 +283,9 @@ class Loops(commands.Cog):
                     stats[i]['deaths'] += processed[i]['deaths']
                 else:
                     stats[i] = processed[i]
-            if pagecount == pagecap:
-                print('PAGE LIMIT REACHED REEEE!!')
-                break
+            if pagecap > 0:
+                if pagecount == pagecap:
+                    break
             pagecount += 1
         stats = await self.sortedplayers(stats)
         return stats
@@ -458,4 +452,4 @@ class Loops(commands.Cog):
 
 
 async def setup(client):
-    await client.add_cog(Loops(client))
+    await client.add_cog(Leaderboard(client))
