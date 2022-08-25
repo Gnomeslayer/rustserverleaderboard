@@ -10,6 +10,7 @@ Commands
 The bot requires several API keys to begin functioning.
 --------------------------
 Discord_token - https://discord.com/developers/docs/intro / https://discord.com/developers/applications <br />
+battlemetrics_token - https://www.battlemetrics.com/developers <br />
 
 Additional information the bot requires.
 --------------------------
