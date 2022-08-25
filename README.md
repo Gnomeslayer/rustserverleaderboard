@@ -4,8 +4,8 @@ Leaderboard bot shows the daily and weekly leaderboards for the given rust organ
 
 Commands
 --------------------------
-/startleaderboard <br />
-/stopleaderboard <br />
+!startleaderboard <br />
+!stopleaderboard <br />
 
 The bot requires several API keys to begin functioning.
 --------------------------
