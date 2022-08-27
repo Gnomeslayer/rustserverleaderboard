@@ -1,11 +1,9 @@
 # Gnomes Leaderboard Bot
 Leaderboard bot shows the daily and weekly leaderboards for the given rust organization!
+There are 2 options to choose from, Picture form which will return a picture result (requires the server to have access to a browser)
+Embed form which will return results in embed form.
 
-
-Commands
---------------------------
-!startleaderboard <br />
-!stopleaderboard <br />
+Examples: https://imgur.com/a/F4KnS3x
 
 The bot requires several API keys to begin functioning.
 --------------------------
